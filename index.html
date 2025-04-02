@@ -5,20 +5,26 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Webapp CalcTest</title>
+        <link rel="stylesheet" href="style.css">
     </head>
     <body>
         <h1 id="main-title">CalcTest</h1>
         <div id="container">
             <div id="history">
-                <h2 id="history-title"></h2>
-
+                <h2 id="history-title">Past answers:</h2>
+                <ul id="results-list"></ul>
             </div>
-            <p id="question-text">? + ? = ?</p>
-            <p id="what-the-answer-text">What's the answer?</p>
-            <button id="button-1">?</button>
-            <button id="button-2">?</button>
-            <button id="button-3">?</button>
-            <button id="button-4">?</button>
+            <div id="question-container">
+                <p id="question-text">? + ? = ?</p>
+                <p id="what-the-answer-text">What's the answer?</p>
+                <div id="options">
+                    <button class="answer-button" id="button-1">?</button>
+                    <button class="answer-button" id="button-2">?</button>
+                    <button class="answer-button" id="button-3">?</button>
+                    <button class="answer-button" id="button-4">?</button>
+                </div>
+                <button id="next-btn">Next Question</button>
+            </div>
         </div>
     </body>
 </html>
