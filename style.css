@@ -45,10 +45,10 @@ h1 {
 #history {
     position: absolute;
     top: 100px;
-    right: 400px;
-    width: 200px;
+    right: 150px;
+    width: 400px;
     background-color: white;
-    text-align: right;
+    text-align: center;
     border-radius: 15px;
     box-shadow: 0 4px 10px black;
     padding: 15px;
@@ -82,3 +82,55 @@ button#next {
     transition: background-color 0.3s ease;
     margin: 50px;
 }
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 50px;
+    }
+
+    #question-text {
+        font-size: 30px;
+    }
+
+    #what-the-answer-text {
+        font-size: 18px;
+    }
+
+    #container {
+        flex-direction: column;
+        align-items: center;
+        padding-top: 50px;
+        height: auto;
+    }
+
+    #question-container {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+
+    #history {
+        position: static;
+        width: 90%;
+        margin-bottom: 20px;
+    }
+
+    button#next {
+        margin: 20px auto;
+        display: block;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 35px;
+    }
+
+    #question-text {
+        font-size: 24px;
+    }
+
+    #what-the-answer-text {
+        font-size: 16px;
+    }
+}
+
