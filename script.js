@@ -3,6 +3,7 @@ const questionText = document.getElementById("question-text");
 const answerButtons = document.querySelectorAll(".answer-button");
 const historyList = document.getElementById("results-list");
 const nextButton = document.getElementById("next-btn");
+const resultOutcome = document.getElementById("result-text");
 
 let correctAnswer = 0; // Guardará la respuesta correcta
 
@@ -56,6 +57,7 @@ function checkAnswer(selectedAnswer) {
     listItem.textContent = `${questionText.textContent} Respuesta: ${selectedAnswer} → ${resultText}`;
     historyList.prepend(listItem); // Agregarlo al inicio del historial
 
+    resultOutcome.textContent = resultText;
     // Generar una nueva pregunta después de un breve retraso
     setTimeout(generateQuestion, 500);
 }
