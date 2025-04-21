@@ -52,6 +52,7 @@ function generateQuestion() {
 // Función para comprobar si la respuesta seleccionada es correcta
 function checkAnswer(selectedAnswer) {
     const resultText = selectedAnswer === correctAnswer ? "✅ Correcto" : "❌ Incorrecto";
+    const booleanResult = selectedAnswer === correctAnswer; 
 
     // Agregar el resultado al historial
     const listItem = document.createElement("li");
@@ -61,7 +62,7 @@ function checkAnswer(selectedAnswer) {
     const resultEntry = {
         question: questionText.textContent,
         selectedAnswer,
-        result: resultText
+        result: booleanResult
     };
 
     saveResult(resultEntry); // guardar respuesta en json server
@@ -89,7 +90,7 @@ function loadHistory() {
             historyList.innerHTML = "";
             data.reverse().forEach(item => {
                 const li = document.createElement("li");
-                li.textContent = `${item.question} Respuesta: ${item.selectedAnswer} → ${item.result}`;
+                li.textContent = `${item.question} Respuesta: ${item.selectedAnswer} → ${item.result ? "✅ Correcto" : "❌ Incorrecto"}`;
                 historyList.appendChild(li);
             });
         });

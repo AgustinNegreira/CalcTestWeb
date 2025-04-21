@@ -1,70 +1,46 @@
 {
   "results": [
     {
-      "id": "1794",
-      "question": "9 + 8 = ?",
-      "selectedAnswer": 17,
-      "result": "✅ Correcto"
+      "id": "8102",
+      "question": "7 + 1 = ?",
+      "selectedAnswer": 8,
+      "result": true
     },
     {
-      "id": "a20e",
-      "question": "2 + 8 = ?",
-      "selectedAnswer": 10,
-      "result": "✅ Correcto"
+      "id": "969f",
+      "question": "7 + 1 = ?",
+      "selectedAnswer": 8,
+      "result": true
     },
     {
-      "id": "000f",
-      "question": "5 - 4 = ?",
-      "selectedAnswer": 1,
-      "result": "✅ Correcto"
+      "id": "1cbc",
+      "question": "5 * 6 = ?",
+      "selectedAnswer": 29,
+      "result": false
     },
     {
-      "id": "3353",
-      "question": "1 + 6 = ?",
+      "id": "b258",
+      "question": "3 + 6 = ?",
       "selectedAnswer": 7,
-      "result": "✅ Correcto"
+      "result": false
     },
     {
-      "id": "2343",
-      "question": "9 + 5 = ?",
-      "selectedAnswer": 16,
-      "result": "❌ Incorrecto"
+      "id": "3e9a",
+      "question": "5 + 8 = ?",
+      "selectedAnswer": 11,
+      "result": false
     },
     {
-      "id": "d698",
-      "question": "5 - 9 = ?",
-      "selectedAnswer": -2,
-      "result": "❌ Incorrecto"
+      "id": "f002",
+      "question": "6 * 3 = ?",
+      "selectedAnswer": 20,
+      "result": false
     },
     {
-      "id": "c9b7",
-      "question": "5 - 3 = ?",
-      "selectedAnswer": 2,
-      "result": "✅ Correcto"
-    },
-    {
-      "id": "e367",
-      "question": "6 + 8 = ?",
-      "selectedAnswer": 12,
-      "result": "❌ Incorrecto"
-    },
-    {
-      "id": "3421",
-      "question": "10 - 4 = ?",
-      "selectedAnswer": 6,
-      "result": "✅ Correcto"
-    },
-    {
-      "id": "79fa",
-      "question": "8 + 6 = ?",
-      "selectedAnswer": 12,
-      "result": "❌ Incorrecto"
-    },
-    {
-      "id": "0893",
-      "question": "3 * 9 = ?",
-      "selectedAnswer": 28,
-      "result": "❌ Incorrecto"
+      "id": "95ed",
+      "question": "4 + 8 = ?",
+      "selectedAnswer": 11,
+      "result": false
     }
   ]
 }
