@@ -3,7 +3,6 @@ const questionText = document.getElementById("question-text");
 const answerButtons = document.querySelectorAll(".answer-button");
 const historyList = document.getElementById("results-list");
 const nextButton = document.getElementById("next-btn");
-const resultOutcome = document.getElementById("result-text");
 
 let correctAnswer = 0; // Guardará la respuesta correcta
 
@@ -68,6 +67,7 @@ function checkAnswer(selectedAnswer) {
     saveResult(resultEntry); // guardar respuesta en json server
 
     resultOutcome.textContent = resultText;
+
     // Generar una nueva pregunta después de un breve retraso
     setTimeout(generateQuestion, 500);
 }
@@ -98,7 +98,7 @@ function loadHistory() {
 // Evento para cambiar de pregunta cuando se presiona el botón "Next Question"
 nextButton.addEventListener("click", generateQuestion);
 
-// Genera una pregunta inicial cuando se carga la página
+// Genera una pregunta inicial cuando se carga la página y cargar historial del server
 window.onload = () => {
     generateQuestion();
     loadHistory();
