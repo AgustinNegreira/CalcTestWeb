@@ -91,9 +91,22 @@ function loadHistory() {
             data.reverse().forEach(item => {
                 const li = document.createElement("li");
                 li.textContent = `${item.question} Respuesta: ${item.selectedAnswer} → ${item.result ? "✅ Correcto" : "❌ Incorrecto"}`;
+
+                const deleteBtn = document.createElement("button");
+                deleteBtn.textContent = "🗑️";
+                deleteBtn.style.marginLeft = "10px";
+                deleteBtn.onclick = () => deleteResult(item.id);
+
+                li.appendChild(deleteBtn);
                 historyList.appendChild(li);
             });
         });
+}
+
+function deleteResult(id) {
+    fetch(`${API_URL}/${id}`, {
+        method: "DELETE"
+    }).then(loadHistory);
 }
 
 // Evento para cambiar de pregunta cuando se presiona el botón "Next Question"

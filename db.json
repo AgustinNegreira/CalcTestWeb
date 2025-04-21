@@ -31,16 +31,10 @@
       "result": false
     },
     {
-      "id": "f002",
-      "question": "6 * 3 = ?",
-      "selectedAnswer": 20,
-      "result": false
-    },
-    {
-      "id": "95ed",
-      "question": "4 + 8 = ?",
-      "selectedAnswer": 11,
-      "result": false
+      "id": "2a45",
+      "question": "5 * 3 = ?",
+      "selectedAnswer": 15,
+      "result": true
     }
   ]
 }
