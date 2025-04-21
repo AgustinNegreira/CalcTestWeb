@@ -67,8 +67,6 @@ function checkAnswer(selectedAnswer) {
 
     saveResult(resultEntry); // guardar respuesta en json server
 
-    resultOutcome.textContent = resultText;
-
     // Generar una nueva pregunta después de un breve retraso
     setTimeout(generateQuestion, 500);
 }
