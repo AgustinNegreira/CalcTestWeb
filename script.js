@@ -6,6 +6,8 @@ const nextButton = document.getElementById("next-btn");
 
 let correctAnswer = 0; // Guardará la respuesta correcta
 
+const API_URL = "http://localhost:3000/results"; // url de la "api"
+
 // Función para generar una nueva pregunta
 function generateQuestion() {
     const num1 = Math.floor(Math.random() * 10) + 1; // Número entre 1 y 10
@@ -50,18 +52,54 @@ function generateQuestion() {
 // Función para comprobar si la respuesta seleccionada es correcta
 function checkAnswer(selectedAnswer) {
     const resultText = selectedAnswer === correctAnswer ? "✅ Correcto" : "❌ Incorrecto";
-    
+
     // Agregar el resultado al historial
     const listItem = document.createElement("li");
     listItem.textContent = `${questionText.textContent} Respuesta: ${selectedAnswer} → ${resultText}`;
     historyList.prepend(listItem); // Agregarlo al inicio del historial
 
+    const resultEntry = {
+        question: questionText.textContent,
+        selectedAnswer,
+        result: resultText
+    };
+
+    saveResult(resultEntry); // guardar respuesta en json server
+
+    resultOutcome.textContent = resultText;
+
     // Generar una nueva pregunta después de un breve retraso
     setTimeout(generateQuestion, 500);
+}
+
+// funcion para guardar ls respuesta en json server
+function saveResult(resultEntry) {
+    fetch(API_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(resultEntry)
+    }).then(loadHistory);
+}
+
+// Cargar historial de respuestas desde el servidor
+function loadHistory() {
+    fetch(API_URL)
+        .then(res => res.json())
+        .then(data => {
+            historyList.innerHTML = "";
+            data.reverse().forEach(item => {
+                const li = document.createElement("li");
+                li.textContent = `${item.question} Respuesta: ${item.selectedAnswer} → ${item.result}`;
+                historyList.appendChild(li);
+            });
+        });
 }
 
 // Evento para cambiar de pregunta cuando se presiona el botón "Next Question"
 nextButton.addEventListener("click", generateQuestion);
 
-// Genera una pregunta inicial cuando se carga la página
-window.onload = generateQuestion;
+// Genera una pregunta inicial cuando se carga la página y cargar historial del server
+window.onload = () => {
+    generateQuestion();
+    loadHistory();
+};
